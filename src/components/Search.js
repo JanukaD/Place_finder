@@ -8,7 +8,7 @@ class Search extends Component {
         const keyTyped = this.refs.inputword.value;
         console.log(keyTyped)
 
-        axios.post('node server endpoint', {
+        axios.post('http://localhost:3001/getLocations', {
             city: keyTyped,
           })
           .then(function (response) {
