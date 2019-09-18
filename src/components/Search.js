@@ -3,20 +3,21 @@ import axios from 'axios';
 
 class Search extends Component {
 
-    getKey(e){
+    getKey(e) {
         e.preventDefault();
         const keyTyped = this.refs.inputword.value;
-        console.log(keyTyped)
+        const update = this.props;
 
         axios.post('http://localhost:3001/getLocations', {
             city: keyTyped,
-          })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        })
+            .then(function (response) {
+                console.log(response)
+                update.callUpdate(response.data.data)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
 
