@@ -27,7 +27,7 @@ updateState(newPlaces){
         <div className="row">
           <div className="col-md-8">
             <Search callUpdate={this.updateState.bind(this)} />
-            <ResultList resultPlaces={this.state.results} />
+            <br></br><ResultList resultPlaces={this.state.results} />
           </div>
 
           <div className="col-md-4">
